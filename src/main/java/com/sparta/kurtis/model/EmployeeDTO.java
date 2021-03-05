@@ -1,5 +1,7 @@
 package com.sparta.kurtis.model;
 
+import com.sparta.kurtis.util.LoggingClass;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

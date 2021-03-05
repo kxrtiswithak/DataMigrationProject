@@ -1,4 +1,4 @@
-package com.sparta.kurtis.view;
+package com.sparta.kurtis.util;
 
 import com.sparta.kurtis.model.EmployeeDTO;
 

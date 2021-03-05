@@ -1,6 +1,6 @@
-package com.sparta.kurtis.model;
+package com.sparta.kurtis.util;
 
-import com.sparta.kurtis.main.Main;
+import com.sparta.kurtis.start.Main;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

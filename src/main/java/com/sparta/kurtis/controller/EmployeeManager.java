@@ -1,6 +1,5 @@
 package com.sparta.kurtis.controller;
 
-import com.sparta.kurtis.model.CSVReader;
 import com.sparta.kurtis.model.EmployeeDAO;
 
 public class EmployeeManager {

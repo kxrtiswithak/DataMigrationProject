@@ -1,6 +1,7 @@
 package com.sparta.kurtis.model;
 
-import com.sparta.kurtis.view.Printer;
+import com.sparta.kurtis.util.LoggingClass;
+import com.sparta.kurtis.util.Printer;
 
 import java.sql.*;
 import java.util.Map;
