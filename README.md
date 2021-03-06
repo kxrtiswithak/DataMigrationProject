@@ -62,7 +62,7 @@ I conducted performance testing using parametrized tests using [junit params](po
 
 In order to interact with the database, I created a [Data Access Object](src/main/java/com/sparta/kurtis/model/EmployeeDAO.java), containing methods to [create a table](src/main/java/com/sparta/kurtis/model/EmployeeDAO.java#L102-L122) and [insert into it](src/main/java/com/sparta/kurtis/model/EmployeeDAO.java#L152-L181), as well as [selecting and printing it out](src/main/java/com/sparta/kurtis/model/EmployeeDAO.java#L58-L79). 
 
-A [Data Transfer Object](src/main/java/com/sparta/kurtis/model/EmployeeDTO.java) was used to store the data from the CSV file in a compatible format for the database, something espeically important for the [Date](src/main/java/com/sparta/kurtis/model/EmployeeDTO.java#75-L90) field.
+A [Data Transfer Object](src/main/java/com/sparta/kurtis/model/EmployeeDTO.java) was used to store the data from the CSV file in a compatible format for the database, something espeically important for the [Date](src/main/java/com/sparta/kurtis/model/EmployeeDTO.java#L75-L90) field.
 
 <div id='future'/>
 
