@@ -4,29 +4,13 @@
 
 > Data Migration Project for Sparta Global
 
-## Table of Contents
-
-#### [About :question:](#about)
-#### [Dependencies :computer:](#dependencies)
-#### [MVC Architecture :tokyo_tower:](#mvc)
-#### [Threading :tshirt:](#threading)
-#### [Performance :performing_arts:](#performance)
-#### [DAO & DTO :clipboard:](#DAODTO)
-#### [Future Enhancements :customs:](#future)
-
-<div id='about'/>
-
 ## About :question:
 
 As part of my training with Sparta Global, I was assigned the task of reading a CSV file and writing it to a SQL database. The CSV file contained a employee details, one a sample of 10,000 entries, the other being 65,000 rows long.
 
 MySQL Workbench and Server were used to monitor and run the database locally, hence the use of the icon.
 
-<div id='dependencies'/>
-
 ## Dependencies :computer:
-
-<div id='mvc'/>
 
 ## MVC Architecture :tokyo_tower:
 
@@ -36,15 +20,11 @@ Take for example the [`controller`](src/main/java/com/sparta/kurtis/controller) 
 
 I also created [`start`](src/main/java/com/sparta/kurtis/start) and [`util`](src/main/java/com/sparta/kurtis/util) packages for classes that did not fit within the other three packages (`start` for classes starting the program, `util` for utility classes used throughout the project).
 
-<div id='threading'/>
-
 ## Threading :tshirt:
 
 One of the requirements our trainer wanted was for the application to use multiple threads. I achieved this by [reading in a portion of the CSV file](src/main/java/com/sparta/kurtis/controller/CSVReader.java#L38-L43)), then [writing it to the database](src/main/java/com/sparta/kurtis/controller/CSVReader.java#L64-L68). Depending on how many threads the user specifies would determine the size of each portion of records was written in one go e.g. if writing the sample file containing 10k rows using 5 threads, then approximately 2000 would be written at a time (not accounting for duplicates).
 
 I also incorporated [batching](src/main/java/com/sparta/kurtis/model/EmployeeDAO.java#L160-L170) into my program, whereby instead of only executing one query at a time, they could be added to a batch and ran all at once. Both batching and threading could be toggled by the user (inputting 0 threads and a boolean for batching), something I utilised when carrying out performance tests.
-
-<div id='performance'/>
 
 ## Performance :performing_arts:
 
@@ -54,15 +34,11 @@ I conducted performance testing using parametrized tests using [junit params](po
 
 #### Large
 
-<div id='DAODTO'/>
-
 ## DAO & DTO :clipboard:
 
 In order to interact with the database, I created a [Data Access Object](src/main/java/com/sparta/kurtis/model/EmployeeDAO.java), containing methods to [create a table](src/main/java/com/sparta/kurtis/model/EmployeeDAO.java#L102-L122) and [insert into it](src/main/java/com/sparta/kurtis/model/EmployeeDAO.java#L152-L181), as well as [selecting and printing it out](src/main/java/com/sparta/kurtis/model/EmployeeDAO.java#L58-L79). 
 
 A [Data Transfer Object](src/main/java/com/sparta/kurtis/model/EmployeeDTO.java) was used to store the data from the CSV file in a compatible format for the database, something espeically important for the [Date](src/main/java/com/sparta/kurtis/model/EmployeeDTO.java#L75-L90) field.
-
-<div id='future'/>
 
 ## Future Enhancements :customs:
 
